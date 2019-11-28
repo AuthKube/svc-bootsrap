@@ -1,0 +1,33 @@
+{
+  "name": "svc-bootstrap",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "Ihor Syrov",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "lint": "eslint -c .eslintrc.js '**/*.js'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "inquirer": "7.0.0",
+    "shelljs": "0.8.3"
+  },
+  "devDependencies": {
+    "eslint": "6.7.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "git-hooks": "1.1.10",
+    "husky": "3.1.0"
+  }
+}
