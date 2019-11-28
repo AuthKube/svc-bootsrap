@@ -42,7 +42,7 @@ class ServiceCreator {
     const { serviceName } = serviceConfig;
     this.createNewServiceFromTemplate(serviceConfig);
     await this.installDependencies(serviceName);
-    this.log(`A new service "${serviceName}" service has been successfully created!`, ANSI_COLOR_MAP.GREEN);
+    this.log(`A new service "${serviceName}" has been successfully created!`, ANSI_COLOR_MAP.GREEN);
   }
 
   /**
