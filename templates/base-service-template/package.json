@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint -c .eslintrc.js '**/*.js'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "author": "",
   "license": "",
@@ -13,7 +19,8 @@
     "@typescript-eslint/parser": "2.9.0",
     "eslint": "6.7.1",
     "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-import": "2.18.2"
+    "eslint-plugin-import": "2.18.2",
+    "husky": "3.1.0"
   },
   "dependencies": {}
 }
