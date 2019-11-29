@@ -1,6 +1,11 @@
 # svc-boostrap
 Tool for boostraping microservices
 
+How to use with `npx`:
+* open target folder in your terminal
+* run `npx https://github.com/AuthKube/svc-bootsrap.git` command
+* follow instructions
+
 How to use:
 * clone the "svc-boostrap" repo
 * in your terminal go to the root of the "svc-boostrap" repo
