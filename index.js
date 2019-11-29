@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const inquirer = require('inquirer');
 const shelljs = require('shelljs');
 const fs = require('fs');
@@ -29,7 +30,7 @@ class ServiceCreator {
   constructor() {
     this.currentDirectory = process.cwd();
     this.baseTemplatePath = `${__dirname}/templates/base-service-template`;
-    this.contentToIgnore = ['node_modules', 'package.json'];
+    this.contentToIgnore = ['node_modules', 'package.json', 'gitignore.txt'];
   }
 
   async createService() {
@@ -100,10 +101,12 @@ class ServiceCreator {
       .filter((file) => !this.contentToIgnore.includes(file));
     const baseServicePath = `${this.currentDirectory}/${servicePath}/`;
     const packageJSON = this.generatePackageJSON(serviceConfig);
+    const gitIgnore = fs.readFileSync(`${this.baseTemplatePath}/gitignore.txt`);
 
     // create folder for new service and configure package.json
     fs.mkdirSync(servicePath);
     fs.writeFileSync(`${baseServicePath}/package.json`, packageJSON, 'utf8');
+    fs.writeFileSync(`${baseServicePath}/.gitIgnore`, gitIgnore, 'utf8');
 
     // copy all files and directories from service template
     filesToCreate.forEach((file) => {

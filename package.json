@@ -10,6 +10,9 @@
     "start": "node index.js",
     "lint": "eslint -c .eslintrc.js '**/*.js'"
   },
+  "bin": {
+    "svc-bootstrap": "./index.js"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
