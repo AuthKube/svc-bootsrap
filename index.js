@@ -52,6 +52,8 @@ class ServiceCreator {
   installDependencies(serviceName) {
     return new Promise((res, rej) => {
       shelljs.cd(`./${serviceName}`);
+      // init git repo and remove default hooks which will be installed by husky on a next step
+      shelljs.exec('git init && rm -rf .git/hooks');
       shelljs.exec('npm i', (status) => {
         if (status === 0) {
           // eslint-disable-next-line no-console
